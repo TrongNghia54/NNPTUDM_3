@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Dashboard - Products</h1>
+    <p>API: <code>https://api.escuelajs.co/api/v1/products</code></p>
+
+    <div class="controls">
+      <input id="search-title" type="search" placeholder="Tìm theo tiêu đề..." />
+      <select id="sort-by" title="Sắp xếp">
+        <option value="">Sắp xếp</option>
+        <option value="price-asc">Giá ↑</option>
+        <option value="price-desc">Giá ↓</option>
+        <option value="name-asc">Tên A → Z</option>
+        <option value="name-desc">Tên Z → A</option>
+      </select>
+      <select id="page-size" title="Số mục mỗi trang">
+        <option value="5">5 / trang</option>
+        <option value="10" selected>10 / trang</option>
+        <option value="20">20 / trang</option>
+      </select>
+      <button id="btn-refresh">Tải sản phẩm</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="products-table">
+        <thead>
+          <tr>
+            <th>Hình</th>
+            <th>ID</th>
+            <th>Tiêu đề</th>
+            <th>Giá</th>
+            <th>Danh mục</th>
+          </tr>
+        </thead>
+        <tbody id="products-body">
+          <!-- Rows sẽ được chèn bởi main.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="pager" class="pager" aria-label="Pagination"></div>
+
+    <div id="status" class="status"></div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
